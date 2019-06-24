@@ -1,4 +1,4 @@
-console.log('Checking node versoin: ');
+console.log('Checking node version: ');
 const semver = require('semver');
 const packageJson = require('./package.json');
 const expectedVersion = packageJson.engines.node;

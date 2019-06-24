@@ -9,12 +9,16 @@
   "scripts": {
     "test": "echo \"All tests passed\" && exit 0",
     "build": "echo \"BUILD OK\" && exit 0",
-    "prebuild": "npm run version && npm run test",
-    "version": "node version-check.js"
+    "prebuild": "npm run version && npm run lint && npm run test",
+    "version": "node version-check.js",
+    "lint": "eslint . --ext .js",
+    "start": "http-server src"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^6.0.0",
+    "eslint-plugin-react": "^7.14.1",
     "semver": "^6.1.2"
   }
 }
