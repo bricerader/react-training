@@ -7,18 +7,19 @@
   },
   "main": "javascript.js",
   "scripts": {
-    "test": "echo \"All tests passed\" && exit 0",
+    "test": "jasmine",
     "build": "echo \"BUILD OK\" && exit 0",
     "prebuild": "npm run version && npm run lint && npm run test",
     "version": "node version-check.js",
     "lint": "eslint . --ext .js",
-    "start": "http-server src"
+    "start": "live-server src"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^6.0.0",
     "eslint-plugin-react": "^7.14.1",
+    "jasmine": "^3.4.0",
     "semver": "^6.1.2"
   }
 }
