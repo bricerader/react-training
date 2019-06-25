@@ -1,3 +1,4 @@
 node_modules/*
 version-check.js
 karma.conf.js
+dist/*

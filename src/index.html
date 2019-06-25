@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My React Project</title>
+    <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 <body>
-<h1>Welcome bishes</h1>
-<script src="app.js"></script>
+<h1 id="<%= htmlWebpackPlugin.options.mainDiv %>">Welcome bishes</h1>
+<script src="scripts/app.js"></script>
 </body>
 </html>

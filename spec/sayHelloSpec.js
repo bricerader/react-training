@@ -1,5 +1,5 @@
 describe('Greet', function () {
-    const sayHello = require('../src/sayHello');
+    const sayHello = require('../src/scripts/sayHello');
     it('concats Hello and a name', function () {
         const actual = sayHello.greet('dip shit');
         const expected = 'Hello, dip shit';
