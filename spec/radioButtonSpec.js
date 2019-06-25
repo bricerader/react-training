@@ -5,7 +5,7 @@ import RadioButton from '../src/components/RadioButton';
 describe('RadioButton', function () {
     let component;
     beforeEach(function () {
-        component = TestUtils.renderIntoDocument(<RadioButton text="Graham"/>);
+        component = TestUtils.renderIntoDocument(<RadioButton label="Graham"/>);
     });
 
     it('renders without problems', function () {
