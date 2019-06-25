@@ -7,13 +7,13 @@
   },
   "main": "javascript.js",
   "scripts": {
-    "test": "karma start --singleRun",
     "build": "echo \"BUILD OK\" && exit 0",
-    "prebuild": "npm run version && npm run lint && npm run test",
-    "version": "node version-check.js",
-    "lint": "eslint . --ext .js",
+    "prebuild": "npm run version && npm run lint && npm run test && npm run bundle",
+    "test": "karma start --singleRun",
+    "bundle": "webpack",
     "start": "live-server dist",
-    "bundle": "webpack"
+    "version": "node version-check.js",
+    "lint": "eslint . --ext .js"
   },
   "author": "",
   "license": "ISC",
