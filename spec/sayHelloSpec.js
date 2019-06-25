@@ -1,21 +1,10 @@
-import * as sayHello from '../src/scripts/sayHello';
+import React from 'react';
+import TestUtils from 'react-dom/test-utils';
+import SayHello from '../src/scripts/SayHello';
 
 describe('Greet', function () {
-    it('concats Hello and a name', function () {
-        const actual = sayHello.greet('dip shit');
-        const expected = 'Hello, dip shit';
-        expect(actual).toEqual(expected);
-    });
-
-    it('no name Hello world', function () {
-        const actual = sayHello.greet();
-        const expected = 'Hello, World';
-        expect(actual).toEqual(expected);
-    });
-
-    it('empty name Hello world', function () {
-        const actual = sayHello.greet('');
-        const expected = 'Hello, World';
-        expect(actual).toEqual(expected);
+    it('renders without problems', function () {
+        const sayHello = TestUtils.renderIntoDocument(<SayHello/>);
+        expect(sayHello).toEqual(jasmine.anything());
     });
 });
