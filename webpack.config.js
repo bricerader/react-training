@@ -24,7 +24,7 @@ module.exports = {
         new CleanWebpackPlugin(),
         new HTMLWebpackPlugin({
             filename: 'index.html',
-            title: 'Welcome to my page!',
+            title: 'Welcome bishes!',
             mainDiv: 'welcome-message',
             template: 'src/index.html'
         })

@@ -1,4 +1,4 @@
-exports.greet = function greet(name) {
+export let greet = (name) => {
     if (name) {
         return 'Hello, ' + name;
     } else {
