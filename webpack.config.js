@@ -1,5 +1,6 @@
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const path = require('path');
 
@@ -27,6 +28,12 @@ module.exports = {
             title: 'Welcome bishes!',
             mainDiv: 'welcome-message',
             template: 'src/index.html'
-        })
+        }),
+        new CopyWebpackPlugin([
+            {
+                from: 'src/data',
+                to: 'data/'
+            }
+        ])
     ]
 };
