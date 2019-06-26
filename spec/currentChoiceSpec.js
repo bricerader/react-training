@@ -19,7 +19,7 @@ describe('Current Choice', function () {
 
     it('should print a message', function () {
         let actual = TestUtils.findRenderedDOMComponentWithTag(component, 'div').textContent;
-        let expected = 'Current selection: Graham';
+        let expected = 'Current selection: ';
         expect(actual).toEqual(expected);
     });
 });

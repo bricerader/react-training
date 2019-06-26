@@ -1,7 +1,12 @@
 import React from 'react';
 
-function PollSubmitButton() {
-    return (<button className="btn btn-success">See who's the biggest bish</button>);
+function PollSubmitButton(props) {
+    return (
+        <button className="btn btn-success" onClick={props.handleClick}>{props.text}</button>);
 }
+
+PollSubmitButton.defaultProps = {
+    text: 'See who\'s the biggest bish'
+};
 
 export default PollSubmitButton;
