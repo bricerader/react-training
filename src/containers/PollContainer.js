@@ -3,14 +3,16 @@ import PollHeader from '../components/PollHeader';
 import PollQuestion from '../components/PollQuestion';
 import PollSubmitButton from '../components/PollSubmitButton';
 import RadioButtonGroup from '../components/RadioButtonGroup';
+import CurrentChoice from '../components/CurrentChoice';
+import data from '../data/data.json';
 
 class PollContainer extends React.Component {
     constructor() {
         super();
         this.state = {
-            header: 'Welcome to the Poll!',
+            header: 'Welcome to the Biggest Bish Poll!',
             question: 'Who is the biggest bish?',
-            correctAnswer: 'Most definitely Graham',
+            correctAnswer: 'Graham',
             checkedValue: ''
         };
 
@@ -24,6 +26,39 @@ class PollContainer extends React.Component {
         console.log('current choice: ' + value);
     }
 
+    UNSAFE_componentWillMount() {
+        console.log('componentWillMount()');
+    }
+    // componentDidMount(){
+    //     console.log('componentDidMount');
+    //     this.serverRequest = $.get('http://localhost:8080/data/data.json', function (result) {
+    //         var data = result;
+    //         this.setState({
+    //             header: data.poll.header,
+    //             question: data.poll.questions[0].question,
+    //             choices: data.poll.questions[0].choices,
+    //             correctAnswer: data.poll.questions[0].correctAnswer
+    //         });
+    //     }.bind(this));
+    // }
+    UNSAFE_componentWillReceiveProps() {
+        console.log('componentWillReceiveProps()');
+    }
+    shouldComponentUpdate() {
+        console.log('shouldComponentUpdate()');
+        return true;
+    }
+    UNSAFE_componentWillUpdate() {
+        console.log('componentWillUpdate()');
+    }
+    componentDidUpdate() {
+        console.log('componentDidUpdate()');
+        // this.checkAnswer(this.state.checkedValue);
+    }
+    componentWillUnmount() {
+        console.log('componentWillUnmount()');
+    }
+
     render() {
         let rowStyle = {
             backgroundColor: '#dadada',
@@ -32,28 +67,23 @@ class PollContainer extends React.Component {
             padding: '10px'
         };
 
-        const choices = [
-            {value: 'Brendan', label: 'Brendan'},
-            {value: 'Graham', label: 'Graham'},
-            {value: 'Mike', label: 'Mike'}
-        ];
-
         return (
             <div className="container">
                 <div className="jumbotron">
-                    <PollHeader text={this.state.header}/>
+                    <PollHeader text={data.poll.header}/>
                 </div>
                 <div className="row" style={rowStyle}>
                     <div className="col-sm-4 col-sm-offset-4">
                         <form>
-                            <PollQuestion text={this.state.question}/>
+                            <PollQuestion text={data.poll.questions[0].question}/>
                             <RadioButtonGroup
                                 name='answer'
                                 checkedValue={this.state.checkedValue}
-                                choices={choices}
+                                choices={data.poll.questions[0].choices}
                                 onChange={this.setCheckedValue}
                             />
                             <PollSubmitButton/>
+                            <CurrentChoice checkedValue={this.state.checkedValue}/>
                         </form>
                     </div>
                 </div>

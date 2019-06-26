@@ -1,0 +1,21 @@
+{"poll":
+{"header": "Welcome to the Biggest Bish Poll!",
+  "questions" : [{
+    "question": "Who is the biggest bish?",
+    "choices": [
+      {"value": "Brendan", "label": "Brendan"},
+      {"value": "Graham", "label": "Graham"},
+      {"value": "Mike", "label": "Mike"}
+    ],
+    "correctAnswer": "Graham"
+  },
+    {
+      "question": "What's your favorite color?:",
+      "choices": [
+        {"value": "Orange", "label": "Orange"},
+        {"value": "Blue", "label": "Blue"}
+      ],
+      "correctAnswer": "Blue"
+    }
+  ]
+}}

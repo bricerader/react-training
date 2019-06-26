@@ -1,11 +1,16 @@
 import React from 'react';
 import TestUtils from 'react-dom/test-utils';
 import PollQuestion from '../src/components/PollQuestion';
+import TestWrapper from '../src/components/TestWrapper';
 
 describe('RadioButton', function () {
     let component;
     beforeEach(function () {
-        component = TestUtils.renderIntoDocument(<PollQuestion text="Who is the biggest bish?"/>);
+        component = TestUtils.renderIntoDocument(
+            <TestWrapper>
+                <PollQuestion text='Who is the biggest bish?'/>
+            </TestWrapper>
+        );
     });
 
     it('renders without problems', function () {
