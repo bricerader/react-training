@@ -74,7 +74,7 @@ class PollContainer extends React.Component {
         return (
             <div className="container">
                 <div className="jumbotron">
-                    <PollHeader text="New poll heading"/>
+                    <PollHeader text="Welcome to the Biggest Bish Poll!"/>
                 </div>
                 <div className="row" style={rowStyle}>
                     <div className="col-sm-4 col-sm-offset-4">
