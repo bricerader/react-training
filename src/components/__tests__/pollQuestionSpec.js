@@ -1,14 +1,14 @@
 import React from 'react';
 import TestUtils from 'react-dom/test-utils';
-import PollHeader from '../src/components/PollHeader';
-import TestWrapper from '../src/components/TestWrapper';
+import PollQuestion from '../PollQuestion';
+import TestWrapper from '../TestWrapper';
 
-describe('Poll Header', function () {
+describe('RadioButton', function () {
     let component;
-    beforeEach(function() {
+    beforeEach(function () {
         component = TestUtils.renderIntoDocument(
             <TestWrapper>
-                <PollHeader text='Welcome to the Poll!'/>
+                <PollQuestion text='Who is the biggest bish?'/>
             </TestWrapper>
         );
     });
@@ -18,8 +18,8 @@ describe('Poll Header', function () {
     });
 
     it('should print a message', function () {
-        let actual = TestUtils.findRenderedDOMComponentWithTag(component, 'h1').textContent;
-        let expected = 'Welcome to the Poll!';
+        let actual = TestUtils.findRenderedDOMComponentWithTag(component, 'h2').textContent;
+        let expected = 'Who is the biggest bish?';
         expect(actual).toEqual(expected);
     });
 });

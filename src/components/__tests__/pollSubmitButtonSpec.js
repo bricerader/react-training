@@ -1,7 +1,7 @@
 import React from 'react';
 import TestUtils from 'react-dom/test-utils';
-import PollSubmitButton from '../src/components/PollSubmitButton';
-import TestWrapper from '../src/components/TestWrapper';
+import PollSubmitButton from '../PollSubmitButton';
+import TestWrapper from '../TestWrapper';
 
 describe('PollSubmitButton', function () {
     it('renders without problems', function () {

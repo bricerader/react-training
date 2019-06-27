@@ -1,16 +1,11 @@
 import React from 'react';
 import TestUtils from 'react-dom/test-utils';
-import CurrentChoice from '../src/components/CurrentChoice';
-import TestWrapper from '../src/components/TestWrapper';
+import RadioButton from '../RadioButton';
 
-describe('Current Choice', function () {
+describe('RadioButton', function () {
     let component;
-    beforeEach(function() {
-        component = TestUtils.renderIntoDocument(
-            <TestWrapper>
-                <CurrentChoice checkedValue='Graham'/>
-            </TestWrapper>
-        );
+    beforeEach(function () {
+        component = TestUtils.renderIntoDocument(<RadioButton label="Graham"/>);
     });
 
     it('renders without problems', function () {
@@ -19,7 +14,7 @@ describe('Current Choice', function () {
 
     it('should print a message', function () {
         let actual = TestUtils.findRenderedDOMComponentWithTag(component, 'div').textContent;
-        let expected = 'Current selection: ';
+        let expected = 'Graham';
         expect(actual).toEqual(expected);
     });
 });

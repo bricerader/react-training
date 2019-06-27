@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PollContainer from '../containers/PollContainer';
-import 'bootstrap';
+import App from '../containers/App';
+import store from './store';
 
 ReactDOM.render(
-    <PollContainer />,
+    <App store={store} />,
     document.getElementById('app')
 );

@@ -3,7 +3,6 @@ import PollHeader from '../components/PollHeader';
 import PollQuestion from '../components/PollQuestion';
 import PollSubmitButton from '../components/PollSubmitButton';
 import RadioButtonGroup from '../components/RadioButtonGroup';
-import $ from 'jquery';
 
 class PollContainer extends React.Component {
     constructor(props) {
@@ -27,20 +26,26 @@ class PollContainer extends React.Component {
         });
     }
 
+    // checkAnswer(value) {
+    //     if (value === this.state.correctAnswer) {
+    //         console.log('correct');
+    //     }
+    // }
+
     checkAnswers(event) {
         event.preventDefault();
         console.log('checking answers');
     }
 
-    componentDidMount(){
-        console.log('componentDidMount');
-        this.serverRequest = $.get('http://localhost:8080/data/data.json', function (result) {
-            this.setState({
-                header: result.poll.header,
-                questions: result.poll.questions
-            });
-        }.bind(this));
-    }
+    // componentDidMount(){
+    //     console.log('componentDidMount');
+    //     this.serverRequest = $.get('http://localhost:8080/data/data.json', function (result) {
+    //         this.setState({
+    //             header: result.poll.header,
+    //             questions: result.poll.questions
+    //         });
+    //     }.bind(this));
+    // }
 
     render() {
         let rowStyle = {
@@ -50,16 +55,18 @@ class PollContainer extends React.Component {
             padding: '10px'
         };
 
-        let {questions, checkedValue, header} = this.state;
+        let questions = this.props.questions;
+        console.log(questions);
         let questionsOutput = questions.map(function(question, questionNumber) {
+            console.log(questionsOutput);
             return (
                 <div key={`question-number-${questionNumber}`}>
                     <PollQuestion text={question.question} />
                     <RadioButtonGroup
                         name={questionNumber}
-                        checkedValue={checkedValue[questionNumber]}
+                        checkedValue={this.props.checkedValue[questionNumber]}
                         choices={question.choices}
-                        onChange = {this.setCheckedValue} />
+                        onChange = {this.props.selectAnswer} />
                 </div>
             );
         }.bind(this));
@@ -67,7 +74,7 @@ class PollContainer extends React.Component {
         return (
             <div className="container">
                 <div className="jumbotron">
-                    <PollHeader text={header}/>
+                    <PollHeader text="New poll heading"/>
                 </div>
                 <div className="row" style={rowStyle}>
                     <div className="col-sm-4 col-sm-offset-4">
